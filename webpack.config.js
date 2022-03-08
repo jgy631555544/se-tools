@@ -6,8 +6,6 @@ const isEnvProduction = NODE_ENV === "production";
 const entryPath = path.resolve(__dirname, "src");
 const outputPath = path.resolve(__dirname, "lib");
 
-// const componentPath = (name) => path.resolve(__dirname, "src", name);
-
 const config = {
   mode: NODE_ENV,
   bail: true,
