@@ -2,8 +2,8 @@ const theme = {
   "@lifeGreen": "#3DCD58",
   "@baiyinBlue": "#284E98",
   // @primary-theme记录主题名称，@primary-color为主题色
-  "@primary-theme": "@baiyinBlue",
-  "@primary-color": "#284E98",
+  "@primary-theme": "@lifeGreen",
+  "@primary-color": "#3DCD58",
   "@primary-color-hover": "tint(@primary-color, 20%)",
   "@primary-color-bg": "tint(@primary-color, 80%)",
   "@success-color": "@primary-color",
