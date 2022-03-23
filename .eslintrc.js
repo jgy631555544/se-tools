@@ -21,13 +21,11 @@ module.exports = {
     System: true,
     AMapLoader: true,
   },
+  parser: "@typescript-eslint/parser",
   plugins: ["react", "prettier", "import", "@typescript-eslint"],
   settings: {
     react: {
       version: "^16.10.2",
-    },
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
     },
     "import/resolver": "webpack",
   },

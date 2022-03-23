@@ -4,13 +4,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { NODE_ENV } = process.env;
 const isEnvProduction = NODE_ENV === "production";
 const entryPath = path.resolve(__dirname, "src");
-const outputPath = path.resolve(__dirname, "lib");
+const outputPath = path.resolve(__dirname, "umd");
 
 const config = {
   mode: NODE_ENV,
   bail: true,
   entry: {
-    index: entryPath,
+    index: path.resolve(entryPath, "config"),
   },
   output: {
     path: outputPath,
@@ -28,17 +28,11 @@ const config = {
   module: {
     strictExportPresence: true,
     rules: [
-      { parser: { requireEnsure: false, system: false } },
       {
-        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        test: /\.(ts|tsx)$/,
         include: entryPath,
         exclude: /node_modules/,
-        loader: require.resolve("babel-loader"),
-        options: {
-          cacheDirectory: true,
-          cacheCompression: false,
-          compact: isEnvProduction,
-        },
+        use: ["babel-loader", "ts-loader"],
       },
       {
         test: /\.(le|c)ss$/,
