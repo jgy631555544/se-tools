@@ -27,7 +27,7 @@ module.exports = {
     react: {
       version: "^16.10.2",
     },
-    "import/resolver": "webpack",
+    "import/resolver": { webpack: { config: "webpack.es.config.js" } },
   },
   overrides: [
     {

@@ -1,6 +1,6 @@
 {
   "name": "se-tools",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "scripts": {
     "build": "yarn run tools:prod && yarn run config:prod ",
     "tools:prod": "cross-env NODE_ENV=production webpack  --config webpack.es.config.js",

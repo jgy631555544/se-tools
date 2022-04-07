@@ -17,6 +17,7 @@ function checkUserId(url: string, userId: any): boolean {
     "/common/setlanguage",
     "/AccessControl/ValidateUser",
     "/sso/acs",
+    "/User/getByName",
   ];
   if (userId) {
     return true;
@@ -170,4 +171,4 @@ function get(url: string, params = {}) {
   });
 }
 
-export { get, post };
+export default { get, post };
