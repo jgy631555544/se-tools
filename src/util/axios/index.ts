@@ -84,9 +84,10 @@ axiosInstance.interceptors.request.use((config) => {
     params.setLoading?.(true);
     delete params.setLoading;
   }
-
+  const urlSplit = config.url!.split("/api/");
+  const hmacUrl = urlSplit.length > 1 ? `/${urlSplit[1]}` : config.url!;
   // hmac验证
-  const hmacCalcResult = hmacCalc(config.url!, config.method!, originParams);
+  const hmacCalcResult = hmacCalc(hmacUrl, config.method!, originParams);
   if (hmacCalcResult) {
     config.headers = {
       ...config.headers,
@@ -102,7 +103,7 @@ axiosInstance.interceptors.response.use(
   (res) => {
     // @ts-ignore
     const { interceptorKey, url } = res.config;
-    if (!checkUserId(url!, getCookie("UserId"))) {
+    if (!checkUserId(url!, getCookie("UserId") || localStorage.UserId)) {
       throw new Error("用户已退出登录");
     }
     if (navigator.onLine === false) {

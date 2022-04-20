@@ -1,4 +1,4 @@
-import HmacMD5 from "crypto-js/hmac-md5";
+import MD5 from "crypto-js/md5";
 import HEX from "crypto-js/enc-hex";
 
 /**
@@ -22,15 +22,12 @@ function hmacCalc(
   const timestamp = Date.now();
   let hmac = "";
   if (type === "get") {
-    hmac = HmacMD5(`${url}${timestamp}`, "").toString(HEX);
+    hmac = MD5(`${url}${timestamp}`).toString(HEX);
   } else if (type === "post") {
     if (params) {
-      hmac = HmacMD5(
-        `${url}${JSON.stringify(params)}${timestamp}`,
-        ""
-      ).toString(HEX);
+      hmac = MD5(`${url}${JSON.stringify(params)}${timestamp}`).toString(HEX);
     } else {
-      hmac = HmacMD5(`${url}${timestamp}`, "").toString(HEX);
+      hmac = MD5(`${url}${timestamp}`).toString(HEX);
     }
   } else {
     return null;
