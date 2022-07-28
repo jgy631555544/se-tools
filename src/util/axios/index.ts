@@ -18,6 +18,7 @@ function checkUserId(url: string, userId: any): boolean {
     "/AccessControl/ValidateUser",
     "/sso/acs",
     "/User/getByName",
+    "/user/Login",
   ];
   if (userId) {
     return true;
@@ -106,7 +107,7 @@ axiosInstance.interceptors.response.use(
     if (!checkUserId(url!, getCookie("UserId") || localStorage.UserId)) {
       throw new Error("用户已退出登录");
     }
-    if (navigator.onLine === false) {
+    if (!navigator.onLine) {
       throw new Error("网络离线");
     }
     let isCustomError = false;
@@ -130,6 +131,16 @@ axiosInstance.interceptors.response.use(
         okText: "确认",
       });
       return res.data;
+    }
+    if (res?.data?.Error === "050001200010") {
+      window.location.href = `${window.location.origin}/zh-cn/mini/premission`;
+    }
+    if (res?.data?.Error === "050001200011") {
+      Modal.error({
+        className: "se-pop-poae-modal",
+        title: "提示",
+        content: "软件授权已过期，请先激活后使用",
+      });
     }
     if (!isCustomError) {
       message.error(resMessage);
