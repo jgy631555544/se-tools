@@ -17,7 +17,7 @@ export interface md5Response {
 function hmacCalc(
   url: string,
   type: string,
-  params?: object
+  params?: object,
 ): md5Response | null {
   const timestamp = Date.now();
   let hmac = "";

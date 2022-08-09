@@ -27,7 +27,7 @@ const config = {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: { "@": entryPath },
   },
-  plugins: [],
+  plugins: [new MiniCssExtractPlugin()],
   module: {
     strictExportPresence: true,
     rules: [
@@ -36,6 +36,12 @@ const config = {
         include: entryPath,
         exclude: /node_modules/,
         use: ["babel-loader", "ts-loader"],
+      },
+      {
+        test: /\.(js|jsx)$/,
+        include: entryPath,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
       },
       {
         test: /\.(le|c)ss$/,

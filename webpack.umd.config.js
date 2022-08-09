@@ -10,7 +10,7 @@ const config = {
   mode: NODE_ENV,
   bail: true,
   entry: {
-    index: path.resolve(entryPath, "config"),
+    index: path.resolve(entryPath, "configs"),
   },
   output: {
     path: outputPath,

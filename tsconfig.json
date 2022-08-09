@@ -17,6 +17,7 @@
     "sourceMap": true,
     "target": "ESNext",
     "useDefineForClassFields": true,
+    "noImplicitAny": false
   },
   "include": ["src"],
   "exclude": ["node_modules"],

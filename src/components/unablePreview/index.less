@@ -1,0 +1,39 @@
+.se-unable-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 30px;
+
+  &-text {
+    display: block;
+    font-size: 24px;
+  }
+
+  &-operation {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 6px 8px 0;
+
+    &-btn {
+      display: block;
+      width: 36px;
+      height: 36px;
+      color: #fff;
+      line-height: 36px;
+      text-align: center;
+      background: fade(#000, 65%);
+      border-radius: 18px;
+      cursor: pointer;
+
+      &:hover {
+        background: fade(#000, 100%);
+      }
+
+      .icon-download {
+        font-size: 18px;
+      }
+    }
+  }
+}
