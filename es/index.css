@@ -1,0 +1,188 @@
+.se-tools-dashboard-value {
+  position: relative;
+  color: #333;
+  background-color: #fff;
+}
+.se-tools-dashboard-value-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+.se-tools-dashboard-value-info-name {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  font-size: 14px;
+}
+.se-tools-dashboard-value-info-icon {
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+  left: 0;
+}
+.se-tools-dashboard-value-info-value {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  font-weight: 600;
+}
+.se-tools-dashboard-value-info-value-number {
+  font-size: 24px;
+}
+.se-tools-dashboard-value-info-value-unit {
+  font-size: 14px;
+}
+.se-tools-dashboard-value-info-extremum {
+  position: absolute;
+  right: -60px;
+  bottom: 15px;
+  left: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 20px;
+}
+.se-tools-dashboard-value-info-extremum-value {
+  font-size: 14px;
+}
+
+.se-tools-dashboard-section {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  background-color: #fff;
+}
+.se-tools-dashboard-section-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+.se-tools-dashboard-section-info-name {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  font-size: 14px;
+}
+.se-tools-dashboard-section-info-value {
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+  left: 0;
+  font-weight: 600;
+  font-size: 40px;
+}
+.se-tools-dashboard-section-info-extremum {
+  position: absolute;
+  right: -5px;
+  bottom: 3px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 20px;
+}
+.se-tools-dashboard-section-info-extremum-value {
+  font-size: 14px;
+}
+
+.se-image-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.se-image-preview-content {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.se-image-preview-operations {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 6px 8px 0;
+}
+.se-image-preview-operations .operation-btn {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin-top: 10px;
+  color: #fff;
+  line-height: 36px;
+  text-align: center;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.65);
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+}
+.se-image-preview-operations .operation-btn .icon-fit,
+.se-image-preview-operations .operation-btn .icon-add,
+.se-image-preview-operations .operation-btn .icon-hide,
+.se-image-preview-operations .operation-btn .icon-download {
+  font-size: 18px;
+}
+.se-image-preview-operations .operation-btn:hover {
+  background: #000000;
+}
+.se-image-preview-operations .disabled {
+  color: rgba(255, 255, 255, 0.4);
+}
+.se-image-preview-operations .disabled:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.se-unable-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 30px;
+}
+.se-unable-preview-text {
+  display: block;
+  font-size: 24px;
+}
+.se-unable-preview-operation {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 6px 8px 0;
+}
+.se-unable-preview-operation-btn {
+  display: block;
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  line-height: 36px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 18px;
+  cursor: pointer;
+}
+.se-unable-preview-operation-btn:hover {
+  background: #000000;
+}
+.se-unable-preview-operation-btn .icon-download {
+  font-size: 18px;
+}
+
+.se-tools-page-loading {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
