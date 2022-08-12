@@ -19,6 +19,7 @@ function checkUserId(url: string, userId: any): boolean {
     "/sso/acs",
     "/User/getByName",
     "/user/Login",
+    "/User/loginByToken",
   ];
   if (userId) {
     return true;
@@ -48,7 +49,7 @@ function exit() {
   // 神策注销当前UserId
   document.cookie = "UserId=; path=/;";
   window.location.href = `/zh-cn/logout?returnURL=${encodeURIComponent(
-    window.location.origin
+    window.location.origin,
   )}`;
 }
 
@@ -164,7 +165,7 @@ axiosInstance.interceptors.response.use(
       });
     }
     return message.error("请求失败，请刷新页面");
-  }
+  },
 );
 
 function post(url: string, data = {}) {
