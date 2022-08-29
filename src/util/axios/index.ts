@@ -156,13 +156,14 @@ axiosInstance.interceptors.response.use(
       delete interceptorParams[interceptorKey];
     }
     if (error.response.status === 401) {
-      return Modal.warning({
-        centered: true,
-        content: "当前用户已退出，请重新登录",
-        okText: "好的",
-        autoFocusButton: "ok",
-        onOk: exit,
-      });
+      // return Modal.warning({
+      //   centered: true,
+      //   content: "当前用户已退出，请重新登录",
+      //   okText: "好的",
+      //   autoFocusButton: "ok",
+      //   onOk: exit,
+      // });
+      return null;
     }
     return message.error("请求失败，请刷新页面");
   },
