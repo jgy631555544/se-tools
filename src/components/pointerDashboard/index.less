@@ -1,0 +1,60 @@
+.se-tools-dashboard-value {
+  position: relative;
+  color: #333;
+  background-color: #fff;
+
+  &-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+
+    &-name {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      left: 0;
+      font-size: 14px;
+    }
+
+    &-icon {
+      position: absolute;
+      right: 0;
+      bottom: 25px;
+      left: 0;
+    }
+
+    &-value {
+      position: absolute;
+      right: 0;
+      bottom: -10px;
+      left: 0;
+      font-weight: 600;
+
+      &-number {
+        font-size: 24px;
+      }
+
+      &-unit {
+        font-size: 14px;
+      }
+    }
+
+    &-extremum {
+      position: absolute;
+      right: -60px;
+      bottom: 15px;
+      left: -50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 20px;
+
+      &-value {
+        font-size: 14px;
+      }
+    }
+  }
+}

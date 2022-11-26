@@ -1,0 +1,47 @@
+.se-tools-dashboard-section {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  background-color: #fff;
+
+  &-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+
+    &-name {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      left: 0;
+      font-size: 14px;
+    }
+
+    &-value {
+      position: absolute;
+      right: 0;
+      bottom: 7px;
+      left: 0;
+      font-weight: 600;
+      font-size: 40px;
+    }
+
+    &-extremum {
+      position: absolute;
+      right: -5px;
+      bottom: 3px;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 20px;
+
+      &-value {
+        font-size: 14px;
+      }
+    }
+  }
+}

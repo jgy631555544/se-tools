@@ -1,0 +1,54 @@
+.se-image-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &-operations {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 6px 8px 0;
+
+    .operation-btn {
+      display: block;
+      width: 36px;
+      height: 36px;
+      margin-top: 10px;
+      color: #fff;
+      line-height: 36px;
+      text-align: center;
+      text-decoration: none;
+      background: fade(#000, 65%);
+      border: none;
+      border-radius: 18px;
+      cursor: pointer;
+
+      .icon-fit,
+      .icon-add,
+      .icon-hide,
+      .icon-download {
+        font-size: 18px;
+      }
+    }
+
+    .operation-btn:hover {
+      background: fade(#000, 100%);
+    }
+
+    .disabled {
+      color: fade(#fff, 40%);
+    }
+
+    .disabled:hover {
+      background: fade(#000, 65%);
+    }
+  }
+}
