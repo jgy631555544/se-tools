@@ -19,34 +19,6 @@ export function get(key) {
   return "";
 }
 
-export function set(key, value, options) {
-  options = options || {};
-  if (typeof options.expires === "number") {
-    const days = options.expires;
-    const time = (options.expires = new Date());
-    time.setMilliseconds(time.getMilliseconds() + days * 864e5);
-  }
-
-  return (document.cookie = [
-    key,
-    "=",
-    value,
-    options.expires ? `; expires=${options.expires.toUTCString()}` : "",
-    "; path=",
-    options.path ? options.path : "/",
-    options.domain ? `; domain=${options.domain}` : "",
-    options.secure ? "; secure" : "",
-  ].join(""));
-}
-
-export function remove(key) {
-  document.cookie = `${encodeURIComponent(
-    key,
-  )}=; expires=Thu, 01 Jan 1971 00:00:00 GMT;path=/`;
-}
-
 export default {
   get,
-  set,
-  remove,
 };

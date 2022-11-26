@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Icon, Input } from "antd";
-import moment from "moment";
+import * as dayjs from "dayjs";
 import PDFPreview from "../pdfPreview";
 import ImagePreview from "../imagePreview";
 import UnablePreview from "../unablePreview";
-import { regex } from "../../utils";
 import "./index.less";
 
+const regex = {
+  IMAGE: /(png|PNG|jpe?g|JPE?G|bmp|BMP|gif|GIF)/,
+};
 const KEY_UP = 38;
 const KEY_DOWN = 40;
 const KEY_LEFT = 37;
@@ -59,7 +61,7 @@ function FilePreview(props) {
   }, []);
 
   const formatDate = (dateStr) => {
-    const date = moment(dateStr);
+    const date = dayjs(dateStr);
     return (formatStr) => date.isValid() && date.format(formatStr);
   };
 
@@ -71,7 +73,7 @@ function FilePreview(props) {
           <span title={originalName}>
             {originalName.length > 20
               ? `${originalName.substr(0, 8)}...${originalName.substr(
-                  originalName.length - 6
+                  originalName.length - 6,
                 )}`
               : originalName}
           </span>
@@ -95,7 +97,7 @@ function FilePreview(props) {
               <span className="se-file-preview-header-date">
                 上传于
                 {formatDate(File.CreateTime || File.UploadTime)(
-                  "YYYY年MM月DD日"
+                  "YYYY年MM月DD日",
                 )}
               </span>
               <span className="se-file-preview-header-time">
@@ -130,7 +132,7 @@ function FilePreview(props) {
           onChange={(e) => {
             const newData = data.setIn(
               ["Pictures", index, "Content"],
-              e.target.value
+              e.target.value,
             );
             setData(newData);
           }}
@@ -163,14 +165,14 @@ function FilePreview(props) {
       `${
         window.__options.APIBasePath
       }/common/file/download/${PictureId}?fileName=${encodeURIComponent(
-        FileName
+        FileName,
       )}`;
     let downloadUrl =
       url ||
       `${
         window.__options.APIBasePath
       }/common/file/download/${PictureId}?fileName=${encodeURIComponent(
-        DownloadName
+        DownloadName,
       )}&openWith=download`;
     if (PictureUrl) downloadUrl = "";
     const _type = FileName?.replace(/.+\./, "").toLowerCase() || "png";
