@@ -95,7 +95,7 @@ axiosInstance.interceptors.request.use((config) => {
       ...config.headers,
       timestamp: hmacCalcResult.timestamp,
       hmac: hmacCalcResult.hmac,
-      ...config.setHeader,
+      ...config.requestHeaders,
     };
   }
 
@@ -170,21 +170,21 @@ axiosInstance.interceptors.response.use(
   },
 );
 
-function post(url: string, data = {},setHeader={}) {
+function post(url: string, data = {},requestHeaders={}) {
   return axiosInstance({
     url,
     method: "post",
     data,
-    setHeader
+    requestHeaders
   });
 }
 
-function get(url: string, params = {},setHeader={}) {
+function get(url: string, params = {},requestHeaders={}) {
   return axiosInstance({
     url,
     method: "get",
     params,
-    setHeader
+    requestHeaders
   });
 }
 
