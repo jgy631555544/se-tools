@@ -115,14 +115,14 @@ axiosInstance.interceptors.response.use(
       isCustomError = interceptorParams[interceptorKey].isCustomError;
       delete interceptorParams[interceptorKey];
     }
-    if (res.data.Error === "0" || !res.data.Error) {
-      return res.data.Result;
+    if (res.data.Error === "0" || res.data.code == "0") {
+      return res.data.Result || res.data.data;
     }
     const resMessage =
-      (typeof res.data?.Message === "object"
-        ? res.data?.Message?.[0]
-        : res.data?.Message) || "请求失败，请刷新页面";
-    if (res.data.Error === "-1") {
+      (typeof res.data?.Message === "object" || res.data?.msg === "object"
+        ? res.data?.Message?.[0] || res.data?.msg?.[0]
+        : res.data?.Message || res.data?.msg) || "请求失败，请刷新页面";
+    if (res.data.Error === "-1" || res.data.code == "-1") {
       Modal.error({
         title: "操作失败",
         content: `未知错误：${resMessage}`,
